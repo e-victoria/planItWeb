@@ -1,0 +1,16 @@
+<section class="nav-bar">
+  <h2 class="visually-hidden">Menu</h2>
+  <mat-sidenav-container class="nav-bar__container">
+    <mat-sidenav #nav mode="side" class="navbar__nav">
+      <mat-toolbar color="primary">Menu</mat-toolbar>
+      <mat-nav-list>
+        <a href="#" mat-list-item>Link1</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button type="button" (click)="nav.toggle()">Toggle</button>
+      </mat-toolbar>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>

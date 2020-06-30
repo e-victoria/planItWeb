@@ -7,6 +7,12 @@
   background-color: $white;
 }
 
+.tasks__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2em;
+}
+
 .task__wrapper {
   display: flex;
   border-radius: 0.7em;
@@ -68,4 +74,32 @@
 
 .task__status {
   font-size: 1.1em;
+}
+
+.mat-card-title {
+  margin-bottom: 2em;
+}
+
+@media (max-width: 1200px) {
+  .tasks__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .tasks__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tasks__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .tasks__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

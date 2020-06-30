@@ -1,12 +1,6 @@
 @import "../../assets/styles/variables";
 @import "../../theme";
 
-.tasks {
-  height: 100%;
-  padding: 2em 3vw;
-  background-color: $white;
-}
-
 .tasks__list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

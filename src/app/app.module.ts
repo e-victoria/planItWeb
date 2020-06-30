@@ -8,13 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {MaterialModule} from './material.module';
 import { TasksComponent } from './tasks/tasks.component';
+import { CreateTaskComponent } from './tasks/create-task/create-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SidebarComponent,
-    TasksComponent
+    TasksComponent,
+    CreateTaskComponent
   ],
   imports: [
     MaterialModule,

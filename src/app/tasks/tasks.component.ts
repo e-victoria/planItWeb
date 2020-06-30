@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import ITask from './models/task.model';
 import {TaskStatusesEnum} from './enums/TaskStatuses.enum';
 import {TaskPrioritiesEnum} from './enums/TaskPriorities.enum';
+import ITask from './models/task';
 
 @Component({
   selector: 'app-tasks',

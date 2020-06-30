@@ -9,6 +9,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import {MaterialModule} from './material.module';
 import { TasksComponent } from './tasks/tasks.component';
 import { CreateTaskComponent } from './tasks/create-task/create-task.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CreateTaskComponent } from './tasks/create-task/create-task.component';
     MaterialModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

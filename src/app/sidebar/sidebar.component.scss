@@ -13,16 +13,23 @@
   padding: 0.7em 0.3em;
   width: 3.6em;
   height: 100%;
+  background-color: #ffffff !important;
 }
 
 .nav-bar__btn {
   display: flex;
   width: 3.6em;
   height: 3em;
-  border-radius: unset;
+  border-radius: 0;
 
   & mat-icon {
-    font-size: 3.3em;
+    font-size: 3.6em;
+    color: mat-color($my-custom-accent);
+    transition: color ease-in-out 100ms;
+  }
+
+  &:hover mat-icon {
+    color: darken(mat-color($my-custom-accent), 10%);
   }
 }
 
@@ -40,7 +47,7 @@
   align-items: baseline;
 
   &:first-child {
-    background-color: mat-color($my-custom-accent);
+    background-color: lighten(mat-color($my-custom-accent), 10%);
     border-radius: 0.7em;
   }
 

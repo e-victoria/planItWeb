@@ -15,7 +15,13 @@
   width: 50%;
   background-color: #ffffff;
   box-sizing: border-box;
-  border-radius: 0.7em;
+  border-radius: 0.8em;
+  box-shadow: $default-shadow;
+}
+
+.new-task__error {
+  margin-bottom: 1em;
+  font-size: 1.1em;
 }
 
 .new-task__close-btn {

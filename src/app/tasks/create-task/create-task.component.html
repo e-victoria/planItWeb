@@ -1,0 +1,34 @@
+<section class="new-task section">
+  <h2 class="visually-hidden">New task creator</h2>
+  <div class="new-task__wrapper">
+    <button type="button" class="new-task__close-btn">
+      <span></span>
+    </button>
+    <h3 class="new-task__title">New task</h3>
+    <mat-form-field class="new-task__input-wrapper" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input class="new-task__input" matInput required>
+    </mat-form-field>
+    <mat-form-field class="new-task__input-wrapper" appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+    <mat-form-field class="new-task__input-wrapper" appearance="fill">
+      <mat-label>Status</mat-label>
+      <mat-select>
+        <mat-option value="0">To do</mat-option>
+        <mat-option value="1">In progress</mat-option>
+        <mat-option value="2">Done</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="new-task__input-wraper" appearance="fill">
+      <mat-label>Priority</mat-label>
+      <mat-select>
+        <mat-option value="0">Low</mat-option>
+        <mat-option value="1">Moderate</mat-option>
+        <mat-option value="2">High</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="new-task__btn" mat-raised-button color="accent">Save</button>
+  </div>
+</section>

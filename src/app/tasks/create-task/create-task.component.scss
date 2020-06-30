@@ -1,0 +1,83 @@
+@import "../../../assets/styles/variables";
+
+.new-task {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-task__wrapper {
+  position: relative;
+  display: grid;
+  margin-top: 2em;
+  padding: 4em 10%;
+  width: 50%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 0.7em;
+}
+
+.new-task__close-btn {
+  position: absolute;
+  top: 1.2em;
+  right: 1.3em;
+  padding: 0;
+  width: 2.8em;
+  height: 2.8em;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+
+  & span,
+  & span::after {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 0.2em;
+    border-radius: 0.5em;
+    background-color: $default-font-color;
+    transform: rotate(45deg);
+    transition: all ease-in-out 100ms;
+  }
+
+  & span::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    transform: rotate(90deg);
+  }
+
+  &:hover span {
+    transform: scale(1.1) rotate(45deg);
+  }
+}
+
+.new-task__title {
+  margin: 0 0 2em 0;
+  font-size: 1.6em;
+  font-weight: 400;
+  text-align: center;
+}
+
+.new-task__input-wrapper {
+  margin-bottom: 0.5em;
+}
+
+.new-task__input {
+  border-radius: 0.8em;
+}
+
+.new-task__btn {
+  font-size: 1.2em;
+  padding: 0.6em 1em;
+  color: #ffffff;
+  margin-top: 1.5em;
+  box-shadow: $default-shadow;
+
+  &:hover {
+    color: $white;
+    box-shadow: $darker-shadow;
+  }
+}

@@ -1,11 +1,56 @@
+@import "../../theme";
+
 .nav-bar {
   height: 100%;
+  display: flex;
+}
+
+.nav-bar__btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.7em 0.3em;
+  width: 3.6em;
+  height: 100%;
+}
+
+.nav-bar__btn {
+  display: flex;
+  width: 3.6em;
+  height: 3em;
+  border-radius: unset;
+
+  & mat-icon {
+    font-size: 3.3em;
+  }
 }
 
 .nav-bar__container {
-  height: 100%;
+  position: static !important;
+  flex-grow: 2;
 }
 
-.side-nav__btn-wrapper {
-  height: 100%;
+.nav-bar__content {
+  padding: 0.7em;
+}
+
+.nav-bar__link {
+  display: flex;
+  align-items: baseline;
+
+  &:first-child {
+    background-color: mat-color($my-custom-accent);
+    border-radius: 0.7em;
+  }
+
+  & mat-icon {
+    font-size: 1.7em;
+    margin-right: 0.3em;
+    margin-bottom: 0.17em;
+  }
+
+  & span {
+    font-size: 1.15em;
+  }
 }

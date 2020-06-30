@@ -1,16 +1,20 @@
 <section class="nav-bar">
   <h2 class="visually-hidden">Menu</h2>
+
   <mat-sidenav-container class="nav-bar__container">
-    <mat-sidenav #nav mode="side" class="navbar__nav">
-      <mat-toolbar color="primary">Menu</mat-toolbar>
-      <mat-nav-list>
-        <a href="#" mat-list-item>Link1</a>
+    <mat-sidenav class="nav-bar__content" #nav mode="side">
+      <mat-nav-list class="nav-bar__list">
+        <a class="nav-bar__link" mat-list-item>
+          <mat-icon>add_circle_outline</mat-icon>
+          <span>Add new item</span>
+        </a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
-      <mat-toolbar color="primary">
-        <button type="button" (click)="nav.toggle()">Toggle</button>
-      </mat-toolbar>
-    </mat-sidenav-content>
   </mat-sidenav-container>
+
+  <mat-toolbar color="primary" class="nav-bar__btn-wrapper">
+    <button class="nav-bar__btn" mat-icon-button (click)="nav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
 </section>

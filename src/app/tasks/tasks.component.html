@@ -8,8 +8,8 @@
         <mat-card-title class="task__title">{{task.title}}</mat-card-title>
         <mat-card-content class="task__content">
           <p class="task__status">{{task.status === 0 ? 'To do' : task.status === 1 ? 'In progress' : 'Done'}}</p>
-          <p class="task__priority" [ngClass]="task?.priority === 0 ? 'task__priority--low' :
-                        task?.priority === 1 ? 'task__priority--mid'
+          <p class="task__priority" [ngClass]="task?.priority === '0' ? 'task__priority--low' :
+                        task?.priority === '1' ? 'task__priority--mid'
                         : 'task__priority--high'"
              class="task__priority"></p>
         </mat-card-content>

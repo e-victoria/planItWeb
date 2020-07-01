@@ -13,8 +13,10 @@
   box-shadow: $default-shadow;
   background: linear-gradient(#ffffff, #fdfdfd);
   cursor: pointer;
+  transition: all ease-in-out 100ms;
 
   &:hover {
+    transform: scale(1.02);
     box-shadow: $darker-shadow;
   }
 }

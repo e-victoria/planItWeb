@@ -61,3 +61,24 @@
     font-size: 1.15em;
   }
 }
+
+.mat-list-item:first-child {
+  background-color: transparent !important;
+}
+
+.mat-list-item {
+  margin-bottom: 0.5em;
+
+  &:hover {
+    background-color: mat-color($my-custom-primary) !important;
+  }
+}
+
+.mat-list-item:nth-child(2) {
+  border-radius: 0.7em;
+  background-color: mat-color($my-custom-accent) !important;
+
+  &:hover {
+    background-color: darken(mat-color($my-custom-accent), 10%) !important;
+  }
+}

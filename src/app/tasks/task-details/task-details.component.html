@@ -1,0 +1,45 @@
+<section class="task-details section">
+  <h2 class="visually-hidden">Task details</h2>
+  <form class="task-details__wrapper form" [formGroup]="editTaskForm">
+    <button (click)="close($event)" type="button" class="form__close-btn">
+      <span></span>
+    </button>
+    <h3 class="form__title task-details__title">{{task.title}}</h3>
+    <mat-error class="task-details__error" *ngIf="!title.valid && isSubmitted">{{getErrorMessage()}}</mat-error>
+    <mat-form-field color="accent" class="task-details__input-wrapper" appearance="outline">
+      <mat-label>Title</mat-label>
+      <mat-error *ngIf="!title.valid && isSubmitted">{{getErrorMessage()}}</mat-error>
+      <input formControlName="title" class="task-details__input" matInput required>
+    </mat-form-field>
+    <mat-form-field color="accent" class="task-details__input-wrapper" appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea formControlName="description" matInput></textarea>
+    </mat-form-field>
+    <mat-form-field color="accent" class="task-details__input-wrapper" appearance="outline">
+      <mat-label>Status: {{getTaskStatus()}}</mat-label>
+      <mat-select placeholder="status" formControlName="status">
+        <mat-option (change)="setValue('status', 0)" value="0">To do</mat-option>
+        <mat-option (change)="setValue('status', 1)" value="1">In progress</mat-option>
+        <mat-option (change)="setValue('status', 2)" value="2">Done</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field color="accent" class="task-details__input-wrapper" appearance="outline">
+      <mat-label>Priority: {{getTaskPriority()}}</mat-label>
+      <mat-select [value]="task.priority" formControlName="priority">
+        <mat-option (change)="setValue('priority', 0)" value="0">Low</mat-option>
+        <mat-option (change)="setValue('priority', 1)" value="1">Moderate</mat-option>
+        <mat-option (change)="setValue('priority', 1)" value="2">High</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="task-details__input-wrapper" color="accent" appearance="outline">
+      <mat-label>Deadline</mat-label>
+      <input formControlName="deadline" matInput [matDatepicker]="picker1">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker [startAt]="task.deadline" #picker1></mat-datepicker>
+    </mat-form-field>
+    <div class="task-details__btn-wrapper">
+      <button (click)="saveTaskChanges($event)" class="task-details__btn" mat-raised-button color="warn">Delete</button>
+      <button (click)="saveTaskChanges($event)" class="task-details__btn" mat-raised-button color="accent">Save</button>
+    </div>
+  </form>
+</section>

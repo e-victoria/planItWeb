@@ -45,7 +45,6 @@ export class CreateTaskComponent implements OnInit {
     event.preventDefault();
     this.isSubmitted = true;
     const newTask: ITask = this.newTaskForm.value;
-    //newTask.id = this.tasksService.generateId(this);
     if (this.newTaskForm.valid)  {
       this.tasksService.saveTask(newTask);
     }

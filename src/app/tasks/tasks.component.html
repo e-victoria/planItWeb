@@ -1,9 +1,11 @@
 <section class="tasks section">
   <h2 class="visually-hidden">Tasks</h2>
   <div cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)" class="tasks__list">
-    <div  cdkDrag class="tasks__item task__wrapper"
-                   color="accent"
-                   *ngFor="let task of tasksList">
+    <div cdkDrag
+         routerLink="task-detail/{{task.id}}"
+         class="tasks__item task__wrapper"
+         color="accent"
+         *ngFor="let task of tasksList">
       <mat-card class="task">
         <mat-card-title class="task__title">{{task.title}}</mat-card-title>
         <mat-card-content class="task__content">

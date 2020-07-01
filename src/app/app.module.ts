@@ -10,6 +10,7 @@ import {MaterialModule} from './material.module';
 import { TasksComponent } from './tasks/tasks.component';
 import { CreateTaskComponent } from './tasks/create-task/create-task.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { TaskDetailsComponent } from './tasks/task-details/task-details.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     HomeComponent,
     SidebarComponent,
     TasksComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    TaskDetailsComponent
   ],
   imports: [
     MaterialModule,

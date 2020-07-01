@@ -41,6 +41,15 @@ export class TasksService {
     return newId;
   }
 
+  getTaskById(id: number): ITask {
+    const tasks: ITask[] = this.getAllTasks();
+    for (const task of tasks) {
+      if (task.id === id) {
+        return task;
+      }
+    }
+  }
+
   getAllTasks(): ITask[] {
     return JSON.parse(localStorage.getItem('tasks'));
   }

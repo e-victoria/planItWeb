@@ -41,8 +41,8 @@ export class TasksService {
     return newId;
   }
 
-  getAllTasks() {
-    console.log(localStorage.getItem('tasks'));
+  getAllTasks(): ITask[] {
+    return JSON.parse(localStorage.getItem('tasks'));
   }
 
 }

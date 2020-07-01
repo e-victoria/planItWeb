@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {TasksService} from '../tasks.service';
 import INewTask from '../models/newTask';
+import ITask from '../models/task';
 
 @Component({
   selector: 'app-create-task',
@@ -43,7 +44,8 @@ export class CreateTaskComponent implements OnInit {
   saveTask(event) {
     event.preventDefault();
     this.isSubmitted = true;
-    const newTask: INewTask = this.newTaskForm.value;
+    const newTask: ITask = this.newTaskForm.value;
+    //newTask.id = this.tasksService.generateId(this);
     if (this.newTaskForm.valid)  {
       this.tasksService.saveTask(newTask);
     }

@@ -19,7 +19,7 @@ export class TasksComponent implements OnInit {
 
   createDefaultTask(): ITask {
     const newTask: ITask = {
-      id: '0',
+      id: 0,
       title: 'Create to-do app',
       description: 'Task for recruitment process for a job.',
       status: TaskStatusesEnum.InProgress,

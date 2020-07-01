@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TaskStatusesEnum} from './enums/TaskStatuses.enum';
 import {TaskPrioritiesEnum} from './enums/TaskPriorities.enum';
 import ITask from './models/task';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-tasks',
@@ -28,6 +29,10 @@ export class TasksComponent implements OnInit {
     };
 
     return newTask;
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.tasksList, event.previousIndex, event.currentIndex);
   }
 
 }

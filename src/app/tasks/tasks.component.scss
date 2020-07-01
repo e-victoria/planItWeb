@@ -58,12 +58,23 @@
   justify-content: space-between;
 }
 
-.task__priority--high {
+.task__priority {
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
-  background-color: red;
   border-radius: 0.17em;
+}
+
+.task__priority--high {
+  background-color: mat-color($my-custom-warn);
+}
+
+.task__priority--low {
+  background-color: $green;
+}
+
+.task__priority--mid {
+  background-color: #f59214;
 }
 
 .task__status {

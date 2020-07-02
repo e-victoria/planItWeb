@@ -1,4 +1,5 @@
 @import "../../../assets/styles/variables";
+@import "../../../theme";
 
 .new-task__error {
   margin-bottom: 1em;
@@ -23,5 +24,6 @@
   &:hover {
     color: $white;
     box-shadow: $darker-shadow;
+    background-color: darken(mat-color($my-custom-accent), 2%);
   }
 }

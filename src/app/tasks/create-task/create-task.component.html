@@ -6,16 +6,16 @@
     </button>
     <h3 class="form__title new-task__title">New task</h3>
     <mat-error class="new-task__error" *ngIf="!title.valid && isSubmitted">{{getErrorMessage()}}</mat-error>
-    <mat-form-field color="accent" class="new-task__input-wrapper" appearance="fill">
+    <mat-form-field color="accent" class="new-task__input-wrapper" appearance="outline">
       <mat-label>Title</mat-label>
       <mat-error *ngIf="!title.valid && isSubmitted">{{getErrorMessage()}}</mat-error>
       <input formControlName="title" class="new-task__input" matInput required>
     </mat-form-field>
-    <mat-form-field color="accent" class="new-task__input-wrapper" appearance="fill">
+    <mat-form-field color="accent" class="new-task__input-wrapper" appearance="outline">
       <mat-label>Description</mat-label>
       <textarea formControlName="description" matInput></textarea>
     </mat-form-field>
-    <mat-form-field color="accent" class="new-task__input-wrapper" appearance="fill">
+    <mat-form-field color="accent" class="new-task__input-wrapper" appearance="outline">
       <mat-label>Status</mat-label>
       <mat-select formControlName="status">
         <mat-option (change)="setValue('status', 0)" value="0">To do</mat-option>
@@ -23,7 +23,7 @@
         <mat-option (change)="setValue('status', 2)" value="2">Done</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field color="accent" class="new-task__input-wrapper" appearance="fill">
+    <mat-form-field color="accent" class="new-task__input-wrapper" appearance="outline">
       <mat-label>Priority</mat-label>
       <mat-select formControlName="priority">
         <mat-option (change)="setValue('priority', 0)" value="0">Low</mat-option>
@@ -31,7 +31,7 @@
         <mat-option (change)="setValue('priority', 1)" value="2">High</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field class="new-task__input-wraper" color="accent" appearance="fill">
+    <mat-form-field class="new-task__input-wraper" color="accent" appearance="outline">
       <mat-label>Deadline</mat-label>
       <input formControlName="deadline" matInput [matDatepicker]="picker1">
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>

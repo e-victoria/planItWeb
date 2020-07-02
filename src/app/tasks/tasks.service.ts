@@ -78,4 +78,14 @@ export class TasksService {
     }
   }
 
+  private getTime(date?: Date) {
+    return date != null ? date.getTime() : 0;
+  }
+
+  sort(tasksList: ITask[]) {
+    tasksList.sort((a: ITask, b: ITask) => {
+      return this.getTime(new Date(b.deadline)) - this.getTime(new Date(a.deadline));
+    });
+  }
+
 }

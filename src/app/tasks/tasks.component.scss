@@ -1,10 +1,15 @@
 @import "../../assets/styles/variables";
 @import "../../theme";
 
+.tasks {
+  padding: 0;
+}
+
 .tasks__list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2em;
+  padding: 3em 3vw;
 }
 
 .task__wrapper {
@@ -27,7 +32,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 1.1em 2em;
+  padding: 1.1em 2.5em;
   background-color: transparent;
   box-shadow: none !important;
   box-sizing: border-box;
@@ -87,6 +92,26 @@
   width: 100%;
   margin-bottom: 2em;
   word-break: break-word;
+}
+
+.tasks__menu {
+  width: 100%;
+  padding: 1.4em 7vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.mat-slide-toggle {
+  font-size: 1.3em;
+}
+
+@media (max-width: 1200px) {
+  .tasks__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (max-width: 992px) {

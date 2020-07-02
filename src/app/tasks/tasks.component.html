@@ -1,5 +1,8 @@
 <section class="tasks section">
   <h2 class="visually-hidden">Tasks</h2>
+  <div class="tasks__menu">
+    <mat-slide-toggle (change)="toggleSort()" [(ngModel)]="isChecked">Sort by deadline</mat-slide-toggle>
+  </div>
   <div cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)" class="tasks__list">
     <div cdkDrag
          routerLink="task-detail/{{task.id}}"

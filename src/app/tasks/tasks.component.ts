@@ -12,13 +12,24 @@ import {TasksService} from './tasks.service';
 })
 export class TasksComponent implements OnInit {
 
+  isChecked = false;
   tasksList: ITask[] = [];
+  private originalTasksList: ITask[];
 
   constructor(private tasksService: TasksService) { }
 
   ngOnInit(): void {
     this.tasksList = this.tasksService.getAllTasks();
     this.tasksList.push(this.createDefaultTask());
+    this.originalTasksList = [...this.tasksList];
+  }
+
+  toggleSort() {
+    if (this.isChecked) {
+      this.tasksService.sort(this.tasksList);
+    } else {
+      this.tasksList = [...this.originalTasksList];
+    }
   }
 
   createDefaultTask(): ITask {

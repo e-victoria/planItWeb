@@ -13,6 +13,8 @@ import {TaskPrioritiesEnum} from '../enums/TaskPriorities.enum';
 })
 export class TaskDetailsComponent implements OnInit {
 
+  isDeleted = false;
+  isSaved = false;
   private id: number;
   task: ITask;
   isSubmitted = false;
@@ -88,12 +90,14 @@ export class TaskDetailsComponent implements OnInit {
     if (this.editTaskForm.valid)  {
       changedTask.id = this.id;
       this.tasksService.saveChangedTask(changedTask);
+      this.isSaved = true;
     }
   }
 
   deleteTask(event) {
     event.preventDefault();
     this.tasksService.deleteTask(this.id);
+    this.isDeleted = true;
   }
 
 }

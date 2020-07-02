@@ -1,0 +1,11 @@
+<section class="section popup-message">
+  <h2 class="visually-hidden">Action result</h2>
+  <div [ngClass]="type === 'error' ? 'popup-message--error' : 'popup-message--success'"
+       class="popup-message__wrapper">
+    <p class="popup-message__message">{{message}}</p>
+    <a mat-raised-button
+            color="accent"
+            routerLink="/"
+            class="popup-message__button">Close</a>
+  </div>
+</section>

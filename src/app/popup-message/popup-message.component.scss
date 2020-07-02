@@ -1,0 +1,42 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+@import "../../theme";
+
+.popup-message {
+  width: 100%;
+}
+
+.popup-message__wrapper {
+  margin-top: 3em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 4em 5em;
+  border-radius: 0.6em;
+  box-shadow: $default-shadow;
+}
+
+.popup-message__message {
+  font-size: 1.4em;
+  margin: 0 0 2.5em 0;
+}
+
+.popup-message__button {
+  @include button;
+  font-size: 1.4em;
+  color: #ffffff !important;
+
+  &:hover {
+    color: $white;
+    background-color: darken(mat-color($my-custom-accent), 5%);
+  }
+}
+
+.popup-message--success {
+  border: 0.12em solid $green;
+}
+
+.popup-message--error {
+  border: 0.12em solid mat-color($my-custom-warn);
+}

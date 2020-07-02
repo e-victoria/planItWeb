@@ -1,6 +1,6 @@
 <section class="new-task section">
   <h2 class="visually-hidden">New task creator</h2>
-  <form class="new-task__wrapper form" [formGroup]="newTaskForm">
+  <form *ngIf="!isSaved" class="new-task__wrapper form" [formGroup]="newTaskForm">
     <button (click)="close($event)" type="button" class="form__close-btn">
       <span></span>
     </button>
@@ -39,4 +39,9 @@
     </mat-form-field>
     <button (click)="saveTask($event)" class="new-task__btn" mat-raised-button color="accent">Save</button>
   </form>
+  <app-popup-message class="new-task__popup"
+                     *ngIf="isSaved"
+                     type="success"
+                     message="New task successfully saved!">
+  </app-popup-message>
 </section>

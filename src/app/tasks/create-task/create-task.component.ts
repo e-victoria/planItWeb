@@ -12,6 +12,7 @@ import ITask from '../models/task';
 })
 export class CreateTaskComponent implements OnInit {
 
+  isSaved = false;
   isSubmitted = false;
   newTaskForm: FormGroup = new FormGroup({
     title: new FormControl('', [
@@ -48,6 +49,8 @@ export class CreateTaskComponent implements OnInit {
     if (this.newTaskForm.valid)  {
       this.tasksService.saveTask(newTask);
     }
+
+    this.isSaved = true;
   }
 
   getErrorMessage() {

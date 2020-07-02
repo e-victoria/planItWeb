@@ -11,6 +11,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { CreateTaskComponent } from './tasks/create-task/create-task.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { TaskDetailsComponent } from './tasks/task-details/task-details.component';
+import { PopupMessageComponent } from './popup-message/popup-message.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TaskDetailsComponent } from './tasks/task-details/task-details.componen
     SidebarComponent,
     TasksComponent,
     CreateTaskComponent,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+    PopupMessageComponent
   ],
   imports: [
     MaterialModule,

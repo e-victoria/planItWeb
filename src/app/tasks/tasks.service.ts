@@ -66,4 +66,16 @@ export class TasksService {
     return JSON.parse(localStorage.getItem('tasks'));
   }
 
+  deleteTask(taskId: number): void {
+    const tasks: ITask[] = this.getAllTasks();
+    for (const task of tasks) {
+      if (task.id === taskId) {
+        const taskIndex = tasks.indexOf(task);
+        tasks.splice(taskIndex, taskIndex + 1);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        break;
+      }
+    }
+  }
+
 }

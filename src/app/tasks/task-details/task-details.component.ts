@@ -91,4 +91,9 @@ export class TaskDetailsComponent implements OnInit {
     }
   }
 
+  deleteTask(event) {
+    event.preventDefault();
+    this.tasksService.deleteTask(this.id);
+  }
+
 }

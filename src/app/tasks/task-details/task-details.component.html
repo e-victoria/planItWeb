@@ -38,7 +38,7 @@
       <mat-datepicker [startAt]="task.deadline" #picker1></mat-datepicker>
     </mat-form-field>
     <div class="task-details__btn-wrapper">
-      <button (click)="saveTaskChanges($event)" class="task-details__btn" mat-raised-button color="warn">Delete</button>
+      <button (click)="deleteTask($event)" class="task-details__btn" mat-raised-button color="warn">Delete</button>
       <button (click)="saveTaskChanges($event)" class="task-details__btn" mat-raised-button color="accent">Save</button>
     </div>
   </form>

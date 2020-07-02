@@ -13,6 +13,7 @@ import {TaskPrioritiesEnum} from '../enums/TaskPriorities.enum';
 })
 export class TaskDetailsComponent implements OnInit {
 
+  private id: number;
   task: ITask;
   isSubmitted = false;
   editTaskForm: FormGroup = new FormGroup({
@@ -28,8 +29,8 @@ export class TaskDetailsComponent implements OnInit {
   constructor(private router: Router, private tasksService: TasksService) { }
 
   ngOnInit(): void {
-    const id = this.router.url.split('/').pop();
-    this.task = this.tasksService.getTaskById(Number.parseInt(id));
+    this.id = Number.parseInt(this.router.url.split('/').pop());
+    this.task = this.tasksService.getTaskById(this.id);
     this.setDefaultInputValues();
   }
 
@@ -69,7 +70,7 @@ export class TaskDetailsComponent implements OnInit {
   }
 
   setValue(inputName: string, value: any) {
-    this.editTaskForm.get(inputName).setValue(status);
+    this.editTaskForm.get(inputName).setValue(value);
   }
 
   getErrorMessage() {
@@ -82,6 +83,12 @@ export class TaskDetailsComponent implements OnInit {
 
   saveTaskChanges(event) {
     event.preventDefault();
+
+    const changedTask: ITask = this.editTaskForm.value;
+    if (this.editTaskForm.valid)  {
+      changedTask.id = this.id;
+      this.tasksService.saveChangedTask(changedTask);
+    }
   }
 
 }

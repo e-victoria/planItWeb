@@ -41,6 +41,18 @@ export class TasksService {
     return newId;
   }
 
+  saveChangedTask(changedTask: ITask) {
+    const savedTasks = this.getAllTasks();
+    for (const task of savedTasks) {
+      if (task.id === changedTask.id) {
+        const taskIndex = savedTasks.indexOf(task);
+        savedTasks[taskIndex] = changedTask;
+        localStorage.setItem('tasks', JSON.stringify(savedTasks));
+        break;
+      }
+    }
+  }
+
   getTaskById(id: number): ITask {
     const tasks: ITask[] = this.getAllTasks();
     for (const task of tasks) {

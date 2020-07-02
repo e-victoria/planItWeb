@@ -1,3 +1,13 @@
+@import "../../../assets/styles/mixins";
+
 .task-details__title {
   font-weight: 500;
+}
+
+.task-details__btn-wrapper {
+  @include button;
+
+  & button {
+    font-size: 1.1em;
+  }
 }

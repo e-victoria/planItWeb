@@ -1,5 +1,6 @@
 @import "../../../assets/styles/variables";
 @import "../../../theme";
+@import "../../../assets/styles/mixins";
 
 .new-task__error {
   margin-bottom: 1em;
@@ -15,15 +16,12 @@
 }
 
 .new-task__btn {
-  font-size: 1.2em;
-  padding: 0.6em 1em;
-  color: #ffffff;
+  @include button;
+  color: #ffffff !important;
   margin-top: 1.5em;
-  box-shadow: $default-shadow;
 
   &:hover {
     color: $white;
-    box-shadow: $darker-shadow;
     background-color: darken(mat-color($my-custom-accent), 2%);
   }
 }

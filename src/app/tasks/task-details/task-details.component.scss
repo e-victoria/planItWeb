@@ -1,13 +1,33 @@
 @import "../../../assets/styles/mixins";
+@import "../../../assets/styles/variables";
+@import "../../../theme";
 
 .task-details__title {
   font-weight: 500;
 }
 
 .task-details__btn-wrapper {
-  @include button;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  & button {
-    font-size: 1.1em;
+.task-details__btn {
+  @include button;
+  color: #ffffff !important;
+  font-size: 1.1em;
+
+  &:hover {
+    background-color: darken(mat-color($my-custom-warn), 2%);
+  }
+
+  &:last-child {
+    flex-grow: 2;
+    margin-left: 1.3em;
+
+    &:hover {
+      color: $white;
+      background-color: darken(mat-color($my-custom-accent), 2%);
+    }
   }
 }

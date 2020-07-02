@@ -20,7 +20,7 @@ export class CreateTaskComponent implements OnInit {
     ]),
     description: new FormControl(''),
     status: new FormControl(''),
-    deadline: new FormControl((new Date()).toISOString()),
+    deadline: new FormControl(null),
     priority: new FormControl('')
   });
 
@@ -31,6 +31,12 @@ export class CreateTaskComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setDefaultValues();
+  }
+
+  setDefaultValues() {
+    this.newTaskForm.get('status').setValue(0);
+    this.newTaskForm.get('priority').setValue(1);
   }
 
   setValue(inputName: string, status: number) {
@@ -48,9 +54,9 @@ export class CreateTaskComponent implements OnInit {
     const newTask: ITask = this.newTaskForm.value;
     if (this.newTaskForm.valid)  {
       this.tasksService.saveTask(newTask);
+      this.isSaved = true;
+      console.log(newTask);
     }
-
-    this.isSaved = true;
   }
 
   getErrorMessage() {

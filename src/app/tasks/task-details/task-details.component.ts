@@ -64,6 +64,7 @@ export class TaskDetailsComponent implements OnInit {
     for (const key of Object.keys(this.task)) {
       this.editTaskForm.get(key)?.setValue(this.task[key]);
     }
+    this.editTaskForm.get('deadline').setValue(this.task.deadline);
   }
 
   close(event) {
